@@ -2,7 +2,6 @@ import { injectable, inject } from 'tsyringe';
 import { getDaysInMonth, getDate } from 'date-fns';
 
 import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
-import { fromString } from 'uuidv4';
 
 interface IRequest {
   provider_id: string;
@@ -47,7 +46,7 @@ class ListProviderMonthAvailabilityService {
       };
     });
 
-    return [{ day: 1, available: false }];
+    return availability;
   }
 }
 
